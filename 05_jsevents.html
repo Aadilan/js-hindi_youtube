@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>html events</title>
+</head>
+<body style="background-color:#414141 ; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img  width="200px" id="photoshop" src="https://images.pexels.com/photos/5291515/pexels-photo-5291515.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+             <li><img width="200px" id="india" src="https://images.pexels.com/photos/3207548/pexels-photo-3207548.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+            <li><img  width="200px" id = "river" src="https://images.pexels.com/photos/6871823/pexels-photo-6871823.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+            <li><img width="200px" id="aadil" src="https://images.pexels.com/photos/6005235/pexels-photo-6005235.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://www.google.com/" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+//  document.getElementById('india') .onclick = function(){
+//     alert('owl clicked')
+//  }
+
+//this is best aprroch
+//   document.getElementById('india').addEventListener('click',function(e){
+//      console.log(e)
+
+// },false)
+
+// type, timestamp , defaultPrevented 
+// target, toElement, srcElement,currentTarget,
+// clintX,clintY, screenX, screenY
+// altkey, ctrlkey,shiftkey,keyCode
+
+// attachEvent()
+//jQuery - on
+// eventpropagraction or bubbling
+//document.getElementById('images').addEventListener('click',function(e){
+      //console.log("clicket inside the ul");
+      
+
+//})
+
+//  document.getElementById('india').addEventListener('click',function(e){
+//    console.log("click in india");
+//    e.stopPropagation()
+ //})
+//  document.getElementById('google').addEventListener('click',function(){
+//     console.log('click google')
+//  })
+// document.getElementById('google').addEventListener('click',function(e){
+//     e.preventDefault();
+//     alert('this is a thing a man a person and any thing default thing ')
+
+// },false)
+
+document.querySelector('#images').addEventListener('click',function(e){
+    //console.log(e.target.parentNode);
+    console.log(e.target.tagName);
+    let removeIt = e.target.tagName
+    if(e.target.tagName === 'IMG'){
+        let removeIt = e.target.parentNode
+        removeIt.remove()
+    }
+    
+},false)
+
+</script>
+</html>
